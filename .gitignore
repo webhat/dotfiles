@@ -18,3 +18,4 @@ Public
 .zcomp*
 .bash_history
 .ssh
+.macports/history
