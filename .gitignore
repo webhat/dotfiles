@@ -13,7 +13,7 @@ Public
 .DS_Store
 .Trash
 
-# dotfiles
+# Ignored dotfiles
 .zsh_history
 .zcomp*
 .bash_history
@@ -21,3 +21,8 @@ Public
 .macports/history
 .rvm/*
 .gem/*
+.viminfo
+.gnupg/*
+.ssl/*
+.lesshst
+.bundler/*
