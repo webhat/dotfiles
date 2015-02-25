@@ -19,3 +19,5 @@ Public
 .bash_history
 .ssh
 .macports/history
+.rvm/*
+.gem/*
