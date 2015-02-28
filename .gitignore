@@ -26,3 +26,5 @@ Public
 .ssl/*
 .lesshst
 .bundler/*
+.keepassx
+.vim/.netrwhist
