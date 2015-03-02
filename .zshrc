@@ -124,7 +124,11 @@ alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 
 # Found: http://chneukirchen.org/blog/archive/2012/02/10-new-zsh-tricks-you-may-not-know.html
 zman() {
+<<<<<<< HEAD
   PAGER="less -g -s '+/^       "$1"'" man zshall
+=======
+	  PAGER="less -g -s '+/^       "$1"'" man zshall
+>>>>>>> 4f313d63c1978d45f08f5e2c5d03ce7aa89cca35
 }
 
 # Watch
@@ -133,6 +137,7 @@ function watch() { while true ; do clear ; $@ ; sleep 1 ; done }
 # tmux pane completion found:
 # http://blog.plenz.com/2012-01/zsh-complete-words-from-tmux-pane.html
 _tmux_pane_words() {
+<<<<<<< HEAD
   local expl
   local -a w
   if [[ -z "$TMUX_PANE" ]]; then
@@ -141,6 +146,16 @@ _tmux_pane_words() {
   fi
   w=( ${(u)=$(tmux capture-pane \; show-buffer \; delete-buffer)} )
   _wanted values expl 'words from current tmux pane' compadd -a w
+=======
+	local expl
+	local -a w
+	if [[ -z "$TMUX_PANE" ]]; then
+		_message "not running inside tmux!"
+		return 1
+	fi
+	w=( ${(u)=$(tmux capture-pane \; show-buffer \; delete-buffer)} )
+	_wanted values expl 'words from current tmux pane' compadd -a w
+>>>>>>> 4f313d63c1978d45f08f5e2c5d03ce7aa89cca35
 }
 
 zle -C tmux-pane-words-prefix   complete-word _generic
