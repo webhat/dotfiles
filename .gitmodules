@@ -13,9 +13,6 @@
 [submodule ".vim/bundle/promptline"]
 	path = .vim/bundle/promptline
 	url = https://github.com/edkolev/promptline.vim
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule ".vim/bundle/tmuxline"]
 	path = .vim/bundle/tmuxline
 	url = git@github.com:edkolev/tmuxline.vim.git
@@ -25,6 +22,42 @@
 [submodule ".vim/bundle/ag"]
 	path = .vim/bundle/ag
 	url = git@github.com:rking/ag.vim.git
+[submodule ".vim/bundle/vim-spec"]
+	path = .vim/bundle/vim-spec
+	url = git@github.com:kana/vim-vspec.git
+[submodule ".vim/bundle/ctrlp"]
+	path = .vim/bundle/ctrlp
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule ".vim/plugin/vim-rubocop"]
+	path = .vim/plugin/vim-rubocop
+	url = git@github.com:ngmy/vim-rubocop.git
+[submodule ".vim/bundle/vim-powerline"]
+	path = .vim/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule ".vim/bundle/vim-airline"]
+	path = .vim/bundle/vim-airline
+	url = git@github.com:bling/vim-airline.git
+[submodule ".vim/bundle/hub.com/edkolev/promptline.vim"]
+	path = .vim/bundle/hub.com/edkolev/promptline.vim
+	url = https://github.com/edkolev/promptline.vim
+[submodule ".vim/bundle/tmuxline.vim"]
+	path = .vim/bundle/tmuxline.vim
+	url = git@github.com:edkolev/tmuxline.vim.git
+[submodule ".vim/bundle/hub.com/mileszs/ack.vim"]
+	path = .vim/bundle/hub.com/mileszs/ack.vim
+	url = https://github.com/mileszs/ack.vim
+[submodule ".vim/bundle/ag.vim"]
+	path = .vim/bundle/ag.vim
+	url = git@github.com:rking/ag.vim.git
+[submodule ".vim/bundle/ctrlp.vim"]
+	path = .vim/bundle/ctrlp.vim
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule ".vim/bundle/vim-rubocop"]
+	path = .vim/bundle/vim-rubocop
+	url = git@github.com:ngmy/vim-rubocop.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
 [submodule ".vim/bundle/vim-bundler"]
 	path = .vim/bundle/vim-bundler
 	url = git@github.com:tpope/vim-bundler.git
@@ -40,24 +73,36 @@
 [submodule ".vim/bundle/vim-sensible"]
 	path = .vim/bundle/vim-sensible
 	url = git@github.com:tpope/vim-sensible.git
-[submodule ".vim/bundle/vim-spec"]
-	path = .vim/bundle/vim-spec
+[submodule ".vim/bundle/vim-vspec"]
+	path = .vim/bundle/vim-vspec
 	url = git@github.com:kana/vim-vspec.git
-[submodule ".vim/bundle/vim-matchit"]
-	path = .vim/bundle/vim-matchit
-	url = git@github.com:tsaleh/vim-matchit.git
 [submodule ".vim/bundle/vim-textobj-user"]
 	path = .vim/bundle/vim-textobj-user
 	url = git@github.com:kana/vim-textobj-user.git
 [submodule ".vim/bundle/vim-textobj-rubyblock"]
 	path = .vim/bundle/vim-textobj-rubyblock
 	url = git@github.com:nelstrom/vim-textobj-rubyblock.git
-[submodule ".vim/bundle/ctrlp"]
-	path = .vim/bundle/ctrlp
-	url = git@github.com:kien/ctrlp.vim.git
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = git@github.com:tpope/vim-surround.git
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = git@github.com:godlygeek/tabular.git
+[submodule ".vim/bundle/dash.vim"]
+	path = .vim/bundle/dash.vim
+	url = git@github.com:rizzatti/dash.vim.git
+[submodule ".vim/bundle/erics_vim_syntax_and_color_highlighting"]
+	path = .vim/bundle/erics_vim_syntax_and_color_highlighting
+	url = git@github.com:sentientmachine/erics_vim_syntax_and_color_highlighting.git
+[submodule ".vim/bundle/maven-ide"]
+	path = .vim/bundle/maven-ide
+	url = git@github.com:vim-scripts/maven-ide.git
+[submodule ".vim/bundle/vim-maven-plugin"]
+	path = .vim/bundle/vim-maven-plugin
+	url = git@github.com:mikelue/vim-maven-plugin.git
+[submodule ".vim/bundle/vim-coffee-script"]
+	path = .vim/bundle/vim-coffee-script
+	url = git@github.com:kchmck/vim-coffee-script.git
+[submodule ".vim/bundle/vim-dispatch"]
+	path = .vim/bundle/vim-dispatch
+	url = git@github.com:tpope/vim-dispatch.git
