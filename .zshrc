@@ -66,18 +66,17 @@ export HIST_EXPIRE_DUPS_FIRST=1
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git rails ruby tmux redis-cli git-flow git-extras tmuxinator bundler vagrant sudo zsh-syntax-highlighting)
 
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
-export PATH="/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local//lib/php/pear/bin/:~/bin/:~/.go/bin/:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/:/usr/local/heroku/bin:/Users/danielcrompton/Development/apache-maven-3.0.4//bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/Users/danielcrompton/.rvm/gems/ruby-1.9.3-p448/bin:/Users/danielcrompton/.rvm/gems/ruby-1.9.3-p448@global/bin:/Users/danielcrompton/.rvm/rubies/ruby-1.9.3-p448/bin:/Users/danielcrompton/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin:/opt/local//lib/php/pear/bin/:~/bin/:~/.go/bin/:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/:/usr/local/heroku/bin:/Users/danielcrompton/Development/apache-maven-3.0.4//bin:/Users/danielcrompton/.rvm/gems/ruby-1.9.3-p448/bin:/Users/danielcrompton/.rvm/gems/ruby-1.9.3-p448@global/bin:/Users/danielcrompton/.rvm/rubies/ruby-1.9.3-p448/bin:/Users/danielcrompton/.rvm/bin:/Users/danielcrompton/Development/powerline/scripts:/opt/local/bin/:/Users/danielcrompton/Development/android-sdk-macosx//tools:/Users/danielcrompton/Development/android-sdk-macosx//platform-tools:/Users/danielcrompton/Development/android-sdk-macosx//tools:/Users/danielcrompton/Development/android-sdk-macosx//platform-tools:/Users/danielcrompton/Development/powerline/scripts:/Users/danielcrompton/.rvm/bin:/Users/danielcrompton/Development/powerline/scripts:/opt/local/bin/:/Users/danielcrompton/.rvm/bin:/Users/danielcrompton/Development/powerline/scripts:/opt/local/bin/:~/bin/"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # powerline
-export POWERLINE_COMMAND="/Users/danielcrompton/Development/powerline/scripts/powerline"
+export POWERLINE_COMMAND="$HOME/Development/powerline/scripts/powerline"
 source ~/Development/powerline/powerline/bindings/zsh/powerline.zsh
 
 #source ~/.git-flow-completion.zsh
+source $ZSH/oh-my-zsh.sh
+#source .powerline/
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -89,18 +88,20 @@ source ~/Development/powerline/powerline/bindings/zsh/powerline.zsh
 #   export EDITOR='mvim'
 # fi
 
+ignore() { echo $1 >> .gitignore }
+
 # Modified from original: http://chneukirchen.org/blog/archive/2012/02/10-new-zsh-tricks-you-may-not-know.html
 _OPTLOCALBINVIM=/opt/local/bin/vim
 if [[ -a $_OPTLOCALBINVIM ]]; then
-	alias vim=$_OPTLOCALBINVIM
-	alias vi=$_OPTLOCALBINVIM
+  alias vim=$_OPTLOCALBINVIM
+  alias vi=$_OPTLOCALBINVIM
 
-	foreground-vi() {
-		fg %$_OPTLOCALBINVIM
-	}
+  foreground-vi() {
+    fg %$_OPTLOCALBINVIM
+  }
 
-	zle -N foreground-vi
-	bindkey '^Z' foreground-vi
+  zle -N foreground-vi
+  bindkey '^Z' foreground-vi
 fi
 
 
@@ -117,12 +118,12 @@ alias ssh=/opt/local/bin/ssh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="$EDITOR ~/.zshrc"
+alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 
 # Found: http://chneukirchen.org/blog/archive/2012/02/10-new-zsh-tricks-you-may-not-know.html
 zman() {
-	  PAGER="less -g -s '+/^       "$1"'" man zshall
+  PAGER="less -g -s '+/^       "$1"'" man zshall
 }
 
 # Watch
@@ -131,14 +132,14 @@ function watch() { while true ; do clear ; $@ ; sleep 1 ; done }
 # tmux pane completion found:
 # http://blog.plenz.com/2012-01/zsh-complete-words-from-tmux-pane.html
 _tmux_pane_words() {
-	local expl
-	local -a w
-	if [[ -z "$TMUX_PANE" ]]; then
-		_message "not running inside tmux!"
-		return 1
-	fi
-	w=( ${(u)=$(tmux capture-pane \; show-buffer \; delete-buffer)} )
-	_wanted values expl 'words from current tmux pane' compadd -a w
+  local expl
+  local -a w
+  if [[ -z "$TMUX_PANE" ]]; then
+    _message "not running inside tmux!"
+    return 1
+  fi
+  w=( ${(u)=$(tmux capture-pane \; show-buffer \; delete-buffer)} )
+  _wanted values expl 'words from current tmux pane' compadd -a w
 }
 
 zle -C tmux-pane-words-prefix   complete-word _generic
@@ -157,6 +158,8 @@ alias -g DBM='DB=mysql'
 alias -g DBS='DB=sqlite'
 alias -g DBP='DB=postgres'
 # TODO: Aliases for Mongo and neo4j here
+
+# Expand git aliasos
 alias gt='g tree'
 alias gfi='gf init'
 alias gff='gf feature'
