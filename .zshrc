@@ -1,6 +1,7 @@
 # localo
 export LC_ALL=en_GB.UTF-8
 
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
