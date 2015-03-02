@@ -1,0 +1,20 @@
+Applications
+Desktop
+Documents
+Downloads
+Library
+Movies
+Music
+Pictures
+Public
+
+# OSX dotfiles
+.CFUserTextEncoding
+.DS_Store
+.Trash
+
+# dotfiles
+.zsh_history
+.zcomp*
+.bash_history
+.ssh
