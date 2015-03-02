@@ -1,0 +1,1 @@
+/Users/danielcrompton/Development/powerline/powerline/bindings/vim/plugin/powerline.vim
