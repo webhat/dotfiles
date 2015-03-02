@@ -1,3 +1,7 @@
+# localo
+export LC_ALL=en_GB.UTF-8
+
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -86,15 +90,15 @@ ignore() { echo $1 >> .gitignore }
 # Modified from original: http://chneukirchen.org/blog/archive/2012/02/10-new-zsh-tricks-you-may-not-know.html
 _OPTLOCALBINVIM=/opt/local/bin/vim
 if [[ -a $_OPTLOCALBINVIM ]]; then
-	alias vim=$_OPTLOCALBINVIM
-	alias vi=$_OPTLOCALBINVIM
+  alias vim=$_OPTLOCALBINVIM
+  alias vi=$_OPTLOCALBINVIM
 
-	foreground-vi() {
-		fg %$_OPTLOCALBINVIM
-	}
+  foreground-vi() {
+    fg %$_OPTLOCALBINVIM
+  }
 
-	zle -N foreground-vi
-	bindkey '^Z' foreground-vi
+  zle -N foreground-vi
+  bindkey '^Z' foreground-vi
 fi
 
 
@@ -116,7 +120,7 @@ alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 
 # Found: http://chneukirchen.org/blog/archive/2012/02/10-new-zsh-tricks-you-may-not-know.html
 zman() {
-	  PAGER="less -g -s '+/^       "$1"'" man zshall
+  PAGER="less -g -s '+/^       "$1"'" man zshall
 }
 
 # Watch
@@ -125,14 +129,14 @@ function watch() { while true ; do clear ; $@ ; sleep 1 ; done }
 # tmux pane completion found:
 # http://blog.plenz.com/2012-01/zsh-complete-words-from-tmux-pane.html
 _tmux_pane_words() {
-	local expl
-	local -a w
-	if [[ -z "$TMUX_PANE" ]]; then
-		_message "not running inside tmux!"
-		return 1
-	fi
-	w=( ${(u)=$(tmux capture-pane \; show-buffer \; delete-buffer)} )
-	_wanted values expl 'words from current tmux pane' compadd -a w
+  local expl
+  local -a w
+  if [[ -z "$TMUX_PANE" ]]; then
+    _message "not running inside tmux!"
+    return 1
+  fi
+  w=( ${(u)=$(tmux capture-pane \; show-buffer \; delete-buffer)} )
+  _wanted values expl 'words from current tmux pane' compadd -a w
 }
 
 zle -C tmux-pane-words-prefix   complete-word _generic

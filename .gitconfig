@@ -1,5 +1,26 @@
 [user]
 	name = Daniël W. Crompton
 	email = daniel.crompton@gmail.com
+  signingkey = E1B5C0EC
+[core]
+	excludesfile = /Users/danielcrompton/.gitignore_global
+[alias]
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit --color=auto
+  sig = log --graph --pretty=format:'%H %aN %s %G?' --show-signature 
+	unstage = reset HEAD --
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\nSigned-By: <%GS> %G?' --abbrev-commit --name-status --decorate --date-order
 [push]
-	default = simple
+	default = tracking
+[help]
+	autocorrect = 1
+[github]
+	user = webhat
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[pull]
+	rebase = false
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
