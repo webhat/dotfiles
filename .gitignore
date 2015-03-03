@@ -28,3 +28,6 @@ Public
 .bundler/*
 .keepassx
 .vim/.netrwhist
+.mysql_history
+.cache
+.android
