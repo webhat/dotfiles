@@ -69,7 +69,7 @@ plugins=(git rails ruby tmux redis-cli git-flow git-extras tmuxinator bundler va
 
 # User configuration
 
-export PATH="/opt/local/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/opt/local/bin/:/opt/local/lib/mysql56/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
