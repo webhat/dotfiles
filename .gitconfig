@@ -3,7 +3,7 @@
 	email = daniel.crompton@gmail.com
   signingkey = E1B5C0EC
 [core]
-	excludesfile = /Users/danielcrompton/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [alias]
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit --color=auto
   sig = log --graph --pretty=format:'%H %aN %s %G?' --show-signature 
