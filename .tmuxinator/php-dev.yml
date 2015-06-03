@@ -1,0 +1,32 @@
+# ~/.tmuxinator/ruby-dev.yml
+
+name: php-dev
+root: ~/Projects/SeriousGaming/laravel/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+pre:
+  #  - . ~/.zshrc
+  - php composer.phar install
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - editor:
+      layout: 895f,278x73,0,0[278x55,0,0,42,278x17,0,56,45]
+      panes:
+        - vim
+        - bundle exec guard
+  - server: php artisan serve
+  - sass_and_js: 
+    - cd public/grunt; grunt && grunt watch

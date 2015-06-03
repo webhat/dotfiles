@@ -1,0 +1,30 @@
+# ~/.tmuxinator/ruby-dev.yml
+
+name: oplerno
+root: ~/Development/oplerno
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+pre:
+  osascript -e 'tell application "Viscosity" to connect "Oplerno"' && sleep 5
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - terminals:
+      layout: 99dc,238x68,0,0[238x54,0,0,22,238x13,0,55{119x13,0,55,24,118x13,120,55[118x6,120,55,25,118x6,120,62,26]}]
+      panes:
+        - ssh db01
+        - ssh web01
+        - ssh web02
+        - ssh mail01

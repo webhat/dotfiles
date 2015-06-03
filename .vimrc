@@ -7,6 +7,8 @@ nmap <Leader>s :source $MYVIMRC<CR>
 nmap <leader>b :tabedit ~/.bash_profile<CR>:sp ~/.bashrc<CR>
 nmap <leader>z :tabedit ~/.zshrc<CR>
 
+set shell=/bin/sh
+
 
 " Text Replacements
 imap ;cr /* Copyright (c) 2013 Daniël W. Crompton <daniel@specialbrands.net>,<CR> *     Special Brands <info@specialbrands.net><CR>*/<CR>
@@ -33,6 +35,7 @@ set nocompatible
 if has("autocmd") 
 	filetype indent plugin on 
 endif 
+filetype plugin on
 
 " Plugins
 :runtime ~/.vim/autoload/vimex.vim
@@ -52,6 +55,14 @@ let g:airline#extensions#tabline#enabled = 1
 :vnoremap <leader>rrlv :RRenameLocalVariable<cr>
 :vnoremap <leader>rriv :RRenameInstanceVariable<cr>
 :vnoremap <leader>rem  :RExtractMethod<cr>
+vmap <leader>t :call I18nTranslateString()<CR>
+vmap <leader>dt :call I18nDisplayTranslation()<CR>
+" nmap <leader>T :Rake<CR>
+" RSpec.vim mappings
+nmap <Leader>T :call RunCurrentSpecFile()<CR>
+nmap <Leader>S :call RunNearestSpec()<CR>
+nmap <Leader>L :call RunLastSpec()<CR>
+nmap <Leader>A :call RunAllSpecs()<CR>
 
 autocmd BufNewFile,BufRead :set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 

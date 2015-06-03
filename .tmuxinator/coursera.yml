@@ -1,0 +1,28 @@
+# ~/.tmuxinator/ruby-dev.yml
+
+name: coursera
+root: ~/Development/coursera
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+pre:
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - downloader:
+      layout: 9d5c,238x68,0,0{170x68,0,0,5,67x68,171,0[67x23,171,0,6,67x44,171,24,4]}
+      panes:
+        - tail -f coursera.log
+        - ./coursera.sh
+        - vim coursera.txt
