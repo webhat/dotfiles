@@ -1,6 +1,7 @@
 
 " Shortcuts
 let mapleader = ","
+let mapleader = "\<space>"
 nmap <leader>v :tabedit $MYVIMRC<CR>
 nmap <Leader>s :source $MYVIMRC<CR>
 nmap <leader>b :tabedit ~/.bash_profile<CR>:sp ~/.bashrc<CR>
