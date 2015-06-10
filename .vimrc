@@ -64,9 +64,28 @@ nmap <Leader>S :call RunNearestSpec()<CR>
 nmap <Leader>L :call RunLastSpec()<CR>
 nmap <Leader>A :call RunAllSpecs()<CR>
 
+let g:rspec_command = "Dispatch rspec {spec}"
+
 autocmd BufNewFile,BufRead :set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+" http://vim.wikia.com/wiki/Modeline_magic
+" Append modeline after last line in buffer.
+" Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
+" files.
+function! AppendModeline()
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set :",
+        \ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
+  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+  call append(line("$"), l:modeline)
+endfunction
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+
+set modeline
+set modelines=5
 
 :nnoremap <F5> "=strftime("%c")<CR>P
 :inoremap <F5> <C-R>=strftime("%c")<CR>
 
 :set expandtab
+
+" vim: set ts=2 sw=2 tw=78 et :
