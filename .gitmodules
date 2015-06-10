@@ -114,3 +114,6 @@
 [submodule "/Users/danielcrompton/.vim/bundle/puppet"]
 	path = /Users/danielcrompton/.vim/bundle/puppet
 	url = git://github.com/rodjek/vim-puppet.git
+[submodule ".vim/bundle/vim-scriptease"]
+	path = .vim/bundle/vim-scriptease
+	url = https://github.com/tpope/vim-scriptease
