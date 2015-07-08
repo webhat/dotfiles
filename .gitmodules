@@ -5,75 +5,99 @@
 [submodule ".themes/oh-my-zsh-powerline-theme"]
 	path = .themes/oh-my-zsh-powerline-theme
 	url = https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme
+  ignore = dirty
 [submodule ".vim/bundle/powerline"]
 	path = .vim/bundle/powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+  ignore = dirty
 [submodule ".vim/bundle/airline"]
 	path = .vim/bundle/airline
 	url = https://github.com/bling/vim-airline.git
+  ignore = dirty
 [submodule ".vim/bundle/promptline"]
 	path = .vim/bundle/promptline
 	url = https://github.com/edkolev/promptline.vim
+  ignore = dirty
 [submodule ".vim/bundle/tmuxline"]
 	path = .vim/bundle/tmuxline
 	url = https://github.com/edkolev/tmuxline.vim.git
+  ignore = dirty
 [submodule ".vim/bundle/ack"]
 	path = .vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim
+  ignore = dirty
 [submodule ".vim/bundle/ag"]
 	path = .vim/bundle/ag
 	url = https://github.com/rking/ag.vim.git
+  ignore = dirty
 [submodule ".vim/bundle/vim-spec"]
 	path = .vim/bundle/vim-spec
 	url = https://github.com/kana/vim-vspec.git
+  ignore = dirty
 [submodule ".vim/bundle/ctrlp"]
 	path = .vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+  ignore = dirty
 [submodule ".vim/plugin/vim-rubocop"]
 	path = .vim/plugin/vim-rubocop
 	url = https://github.com/ngmy/vim-rubocop.git
+  ignore = dirty
 [submodule ".vim/bundle/vim-powerline"]
 	path = .vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+  ignore = dirty
 [submodule ".vim/bundle/vim-airline"]
 	path = .vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
+  ignore = dirty
 [submodule ".vim/bundle/hub.com/edkolev/promptline.vim"]
 	path = .vim/bundle/hub.com/edkolev/promptline.vim
 	url = https://github.com/edkolev/promptline.vim
+  ignore = dirty
 [submodule ".vim/bundle/tmuxline.vim"]
 	path = .vim/bundle/tmuxline.vim
 	url = https://github.com/edkolev/tmuxline.vim.git
+  ignore = dirty
 [submodule ".vim/bundle/hub.com/mileszs/ack.vim"]
 	path = .vim/bundle/hub.com/mileszs/ack.vim
 	url = https://github.com/mileszs/ack.vim
+  ignore = dirty
 [submodule ".vim/bundle/ag.vim"]
 	path = .vim/bundle/ag.vim
 	url = https://github.com/rking/ag.vim.git
+  ignore = dirty
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
+  ignore = dirty
 [submodule ".vim/bundle/vim-rubocop"]
 	path = .vim/bundle/vim-rubocop
 	url = https://github.com/ngmy/vim-rubocop.git
+  ignore = dirty
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+  ignore = dirty
 [submodule ".vim/bundle/vim-bundler"]
 	path = .vim/bundle/vim-bundler
 	url = https://github.com/tpope/vim-bundler.git
+  ignore = dirty
 [submodule ".vim/bundle/vim-rails"]
 	path = .vim/bundle/vim-rails
 	url = https://github.com/tpope/vim-rails.git
+  ignore = dirty
 [submodule ".vim/bundle/vim-rake"]
 	path = .vim/bundle/vim-rake
 	url = https://github.com/tpope/vim-rake.git
+  ignore = dirty
 [submodule ".vim/bundle/vim-ruby-refactoring"]
 	path = .vim/bundle/vim-ruby-refactoring
 	url = https://github.com/ecomba/vim-ruby-refactoring.git
+  ignore = dirty
 [submodule ".vim/bundle/vim-sensible"]
 	path = .vim/bundle/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
+  ignore = dirty
 [submodule ".vim/bundle/vim-vspec"]
 	path = .vim/bundle/vim-vspec
 	url = https://github.com/kana/vim-vspec.git
@@ -85,18 +109,23 @@
 [submodule ".vim/bundle/vim-textobj-rubyblock"]
 	path = .vim/bundle/vim-textobj-rubyblock
 	url = https://github.com/nelstrom/vim-textobj-rubyblock.git
+  ignore = dirty
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+  ignore = dirty
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+  ignore = dirty
 [submodule ".vim/bundle/dash.vim"]
 	path = .vim/bundle/dash.vim
 	url = https://github.com/rizzatti/dash.vim.git
+  ignore = dirty
 [submodule ".vim/bundle/erics_vim_syntax_and_color_highlighting"]
 	path = .vim/bundle/erics_vim_syntax_and_color_highlighting
 	url = https://github.com/sentientmachine/erics_vim_syntax_and_color_highlighting.git
+  ignore = dirty
 [submodule ".vim/bundle/maven-ide"]
 	path = .vim/bundle/maven-ide
 	url = https://github.com/vim-scripts/maven-ide.git
@@ -108,12 +137,16 @@
 [submodule ".vim/bundle/vim-coffee-script"]
 	path = .vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
+  ignore = dirty
 [submodule ".vim/bundle/vim-dispatch"]
 	path = .vim/bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
+  ignore = dirty
 [submodule "/Users/danielcrompton/.vim/bundle/puppet"]
 	path = /Users/danielcrompton/.vim/bundle/puppet
 	url = git://github.com/rodjek/vim-puppet.git
+  ignore = dirty
 [submodule ".vim/bundle/vim-scriptease"]
 	path = .vim/bundle/vim-scriptease
 	url = https://github.com/tpope/vim-scriptease
+  ignore = dirty
