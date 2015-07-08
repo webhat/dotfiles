@@ -31,7 +31,7 @@ windows:
           bundle exec guard
         - . bin/exports ;
           DB=mysql bundle exec rails c
-        - vi ~/ruby_refactor
+          #        - vi ~/ruby_refactor
   - server:
     - . bin/exports ;
       DB=mysql bundle exec rails s
