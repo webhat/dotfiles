@@ -126,3 +126,4 @@ tmp
 .gpg-agent-info
 dump.rdb
 *.tar*
+.zsh-update
