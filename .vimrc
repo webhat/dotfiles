@@ -93,9 +93,32 @@ nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 set modeline
 set modelines=5
 
+" http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+" Copy & paste to system clipboard with <Leader>p and <Leader>y
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
 :nnoremap <F5> "=strftime("%c")<CR>P
 :inoremap <F5> <C-R>=strftime("%c")<CR>
 
 :set expandtab
+
+
+" http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+" vp doesn't replace paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
+
 
 " vim: set ts=2 sw=2 tw=78 et :
