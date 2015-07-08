@@ -59,10 +59,21 @@ vmap <leader>t :call I18nTranslateString()<CR>
 vmap <leader>dt :call I18nDisplayTranslation()<CR>
 " nmap <leader>T :Rake<CR>
 " RSpec.vim mappings
+nmap <Leader><Space> :Rake<CR>
 nmap <Leader>T :call RunCurrentSpecFile()<CR>
 nmap <Leader>S :call RunNearestSpec()<CR>
 nmap <Leader>L :call RunLastSpec()<CR>
 nmap <Leader>A :call RunAllSpecs()<CR>
+
+noremap <Left> <nop>
+inoremap <Left> <nop>
+noremap <Right> <nop>
+inoremap <Right> <nop>
+noremap <Up> <nop>
+inoremap <Up> <nop>
+noremap <Down> <nop>
+inoremap <Down> <nop>
+
 
 autocmd BufNewFile,BufRead :set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 

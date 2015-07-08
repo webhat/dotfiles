@@ -166,8 +166,6 @@ alias gfs='gf support'
 alias gfv='gf version'
 unalias gca
 alias gca='git commit -v -a -S'
-unalias gc
-alias gc='git commit -v -S'
 
 # Found: http://chneukirchen.org/blog/archive/2012/02/10-new-zsh-tricks-you-may-not-know.html
 bindkey "^R" history-incremental-pattern-search-backward

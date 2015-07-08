@@ -123,3 +123,6 @@ tmp
 .kismet
 .adobe
 .Xauthority
+.gpg-agent-info
+dump.rdb
+*.tar*
