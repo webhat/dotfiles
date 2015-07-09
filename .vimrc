@@ -76,7 +76,10 @@ inoremap <Down> <nop>
 
 let g:rspec_command = "Dispatch rspec {spec}"
 
-autocmd BufNewFile,BufRead :set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+augroup all_buffers
+  autocmd!
+  autocmd BufNewFile,BufRead :set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+augroup END
 
 " http://vim.wikia.com/wiki/Modeline_magic
 " Append modeline after last line in buffer.
