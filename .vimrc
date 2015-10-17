@@ -59,11 +59,19 @@ vmap <leader>t :call I18nTranslateString()<CR>
 vmap <leader>dt :call I18nDisplayTranslation()<CR>
 " nmap <leader>T :Rake<CR>
 " RSpec.vim mappings
-nmap <Leader><Space> :Rake<CR>
-nmap <Leader>T :call RunCurrentSpecFile()<CR>
-nmap <Leader>S :call RunNearestSpec()<CR>
-nmap <Leader>L :call RunLastSpec()<CR>
-nmap <Leader>A :call RunAllSpecs()<CR>
+au FileType rb nmap <Leader><Space> :Rake<CR>
+au FileType rb nmap <Leader>T :call RunCurrentSpecFile()<CR>
+au FileType rb nmap <Leader>S :call RunNearestSpec()<CR>
+au FileType rb nmap <Leader>L :call RunLastSpec()<CR>
+au FileType rb nmap <Leader>A :call RunAllSpecs()<CR>
+
+au FileType go nmap <leader>R <Plug>(go-run)
+au FileType go nmap <leader>B <Plug>(go-build)
+au FileType go nmap <leader><Space> <Plug>(go-test)
+au FileType go nmap <leader>C <Plug>(go-coverage)
+au FileType go nmap <leader>T :vsp  %:r_test.go<CR>
+au FileType rl nmap <leader>T :!ragel -Z -G2 -o %:r.go %:r.rl<CR>
+au BufReadPost *.rl set syntax=go
 
 noremap <Left> <nop>
 inoremap <Left> <nop>
@@ -109,6 +117,22 @@ vmap <Leader>P "+P
 :inoremap <F5> <C-R>=strftime("%c")<CR>
 
 :set expandtab
+
+" Hex Editor
+nnoremap <Leader>X VG:!xxd -r<CR>
+
+function! HexEditor()
+  let s:hexedit = 0
+  let s:hexedit_command = "xxd"
+  silent !clear
+  if s:hexedit
+    execute "!" . s:hexedit_command . " " . bufname("%")
+    let s:hexedit = 0
+  else
+    execute "!" . s:hexedit_command . " -r " . bufname("%")
+    let s:hexedit = 0
+  end
+endfunction
 
 
 " http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/

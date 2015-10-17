@@ -127,3 +127,4 @@ tmp
 dump.rdb
 *.tar*
 .zsh-update
+.autocanary

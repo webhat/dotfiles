@@ -175,3 +175,7 @@ export DIRSTACKSIZE=30
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Go Lang
+export PATH="$PATH:/usr/local/go/bin"
+export GOROOT="/usr/local/go/"
