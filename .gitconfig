@@ -26,3 +26,5 @@
 	prompt = false
 [commit]
   template = ~/.gitmessage
+[color]
+	ui = auto

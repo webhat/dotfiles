@@ -179,3 +179,12 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # Go Lang
 export PATH="$PATH:/usr/local/go/bin"
 export GOROOT="/usr/local/go/"
+
+# Android
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+  PATH="$HOME/bin:$PATH"
+fi
+
+# CyanogenMod
+export USE_CCACHE=1

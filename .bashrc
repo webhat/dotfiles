@@ -1,6 +1,8 @@
 
 export MYVIMRC="~/.vimrc"
-source /Users/danielcrompton/.travis/travis.sh
+if [ -f ~/.travis/travis.sh ] ; then
+  source ~/.travis/travis.sh
+fi
 alias tma='tmux attach -d -t'
 #alias tmux-new='tmux new -s $(basename $(pwd))'
 alias tmux-new='tmux new-session -d -s $(basename $(pwd)) \; split-window -h \; split-window -v \; select-pane -t 0 \; attach'
@@ -9,9 +11,18 @@ export PATH="~/bin/:$PATH"
 
 
 # Powerline
-export PATH="$PATH:/Users/danielcrompton/Development/powerline/scripts"
-export POWERLINE_COMMAND="/Users/danielcrompton/Development/powerline/scripts/powerline"
-. /Users/danielcrompton/Development/powerline/powerline/bindings/bash/powerline.sh
+if [ -d ~/Development/powerline/ ] ; then
+  export PATH="$PATH:~/Development/powerline/scripts"
+  if [ -f ~/Development/powerline/scripts/powerline-daemon ] ; then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+  fi
+  if [ -f ~/Development/powerline/scripts/powerline ] ; then
+    export POWERLINE_COMMAND="powerline"
+  fi
+  . ~/Development/powerline/powerline/bindings/bash/powerline.sh
+fi
 
 function lt() { ls -ltrsa "$@" | tail; }
 function psgrep() { ps -axf | grep -v grep | grep "$@" -i --color=auto; }
@@ -21,3 +32,12 @@ alias pp="ps -axf | less"
 alias sum="xargs | tr ' ' '+' | bc" ## Usage: echo 1 2 3 | sum
 function mcd() { mkdir $1 && cd $1; }
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+  PATH="$HOME/bin:$PATH"
+fi
+
+# CyanogenMod
+export USE_CCACHE=1
+
