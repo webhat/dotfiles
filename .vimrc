@@ -45,6 +45,29 @@ call pathogen#infect()
 call pathogen#helptags()
 
 let g:airline#extensions#tabline#enabled = 1
+let g:syntastic_go_checkers = ['gometalinter', "go", "golint", "gotype", "govet"]
+let g:syntastic_javascript_checkers = ['eslint']
+
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
+
 
 :nnoremap <leader>rap  :RAddParameter<cr>
 :nnoremap <leader>rcpc :RConvertPostConditional<cr>
@@ -69,7 +92,8 @@ au FileType go nmap <leader>R <Plug>(go-run)
 au FileType go nmap <leader>B <Plug>(go-build)
 au FileType go nmap <leader><Space> <Plug>(go-test)
 au FileType go nmap <leader>C <Plug>(go-coverage)
-au FileType go nmap <leader>T :vsp  %:r_test.go<CR>
+
+au FileType go nmap <leader>T :!gotests -i -w %:r.go<CR>:vsp  %:r_test.go<CR>
 au FileType rl nmap <leader>T :!ragel -Z -G2 -o %:r.go %:r.rl<CR>
 au BufReadPost *.rl set syntax=go
 

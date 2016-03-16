@@ -1,7 +1,7 @@
 # ~/.tmuxinator/ruby-dev.yml
 
 name: ruby-dev
-root: ~/Development/new-ruby
+root: .
 
 # Optional tmux socket
 # socket_name: foo
@@ -9,7 +9,7 @@ root: ~/Development/new-ruby
 # Runs before everything. Use it to start daemons etc.
 # pre: sudo /etc/rc.d/mysqld start
 pre:
-  - . bin/exports
+#  - . bin/exports
 #  - bin/start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.

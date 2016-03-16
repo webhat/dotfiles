@@ -158,6 +158,8 @@ alias -g DBP='DB=postgres'
 
 # Expand git aliasos
 alias gt='g tree'
+unalias gf
+alias gf='git flow'
 alias gfi='gf init'
 alias gff='gf feature'
 alias gfr='gf release'
