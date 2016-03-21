@@ -1,6 +1,7 @@
 # localo
 export LC_ALL=en_GB.UTF-8
-
+export LANG=en_GB.UTF-8
+export TERM="xterm-256color"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -22,6 +23,14 @@ POWERLINE_HIDE_HOST_NAME="true"
 POWERLINE_NO_BLANK_LINE="true"
 POWERLINE_DETECT_SSH="true"
 
+# POWERLINE_GIT_CLEAN="✔"
+# POWERLINE_GIT_DIRTY="✘"
+# POWERLINE_GIT_ADDED="%F{green}✚%F{black}"
+# POWERLINE_GIT_MODIFIED="%F{blue}✹%F{black}"
+# POWERLINE_GIT_DELETED="%F{red}✖%F{black}"
+# POWERLINE_GIT_UNTRACKED="%F{yellow}✭%F{black}"
+# POWERLINE_GIT_RENAMED="➜"
+# POWERLINE_GIT_UNMERGED="═"
 
 
 # Uncomment the following line to use case-sensitive completion.
@@ -193,3 +202,11 @@ fi
 
 # CyanogenMod
 export USE_CCACHE=1
+
+# Setup Keyboard
+# for Dvorak?
+# From: http://ubuntuforums.org/showthread.php?t=1710325&p=10668853#post10668853
+function dvorak_firsttime() {
+  echo Run: sudo dpkg-reconfigure keyboard-configuration
+}
+# Other?

@@ -128,3 +128,12 @@ dump.rdb
 *.tar*
 .zsh-update
 .autocanary
+
+.ICEauthority
+.Xauthority
+.xchat2
+.dbus
+.gnome
+.xscreensaver
+fonts
+.histfile
