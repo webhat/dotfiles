@@ -138,3 +138,7 @@ dump.rdb
 fonts
 .histfile
 .tmuxinator
+
+.fetchmailrc
+.muttrc
+.fetchids
