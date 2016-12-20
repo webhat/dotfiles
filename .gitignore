@@ -143,3 +143,4 @@ fonts
 .muttrc
 .mutt/muttrc
 .fetchids
+.mutt/aliases
