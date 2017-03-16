@@ -2,7 +2,11 @@ set realname ="Daniël W. Crompton"
 set from =daniel.crompton@gmail.com
 set use_from = yes
 set envelope_from ="yes"
-set folder=~
+set folder=~/Downloads/
+set mailcap_path=~/.mailcap
+unset mark_old
+set copy
+set fast_reply
 
 set pager_index_lines=10
 
@@ -15,7 +19,7 @@ set sort = reverse-threads
 source ~/.mutt/gpg.rc
 
 set pgp_use_gpg_agent = yes
-set pgp_sign_as = D4F7B651
+set pgp_sign_as = 2E4B4CF5
 set pgp_timeout = 3600
 set crypt_autosign = yes
 set crypt_replyencrypt = yes
@@ -24,9 +28,12 @@ set crypt_replyencrypt = yes
 source ~/.mutt/mutt-colors-solarized-light-256.muttrc
 source ~/.mutt/mutt-colors-killer.muttrc
 
-# Aliases
+# Aliases For Sending
 set alias_file= ~/.mutt/aliases
 set sort_alias= alias
 set reverse_alias=yes
 source $alias_file
+
+# Override Internals
+
 
