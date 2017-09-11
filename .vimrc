@@ -3,7 +3,7 @@
 let mapleader = ","
 let mapleader = "\<space>"
 nmap <leader>v :tabedit $MYVIMRC<CR>
-nmap <Leader>s :source $MYVIMRC<CR>
+nmap <leader>s :source $MYVIMRC<CR>
 nmap <leader>b :tabedit ~/.bash_profile<CR>:sp ~/.bashrc<CR>
 nmap <leader>z :tabedit ~/.zshrc<CR>
 
@@ -11,8 +11,8 @@ set shell=/bin/sh
 
 
 " Text Replacements
-imap ;cr /* Copyright (c) 2013 Daniël W. Crompton <daniel@specialbrands.net>,<CR> *     Special Brands <info@specialbrands.net><CR>*/<CR>
-imap ;co /* Copyright (c) 2013 Daniël W. Crompton <crompton@oplerno.com>,<CR> *     Oplerno LLC <info@oplerno.com><CR>*/<CR>
+imap ;cr /* Copyright (c) 2013 Daniël W. Crompton <daniel@specialbrands.net>,<CR>    Special Brands <info@specialbrands.net><CR>*/<CR>
+imap ;co /* Copyright (c) 2013 Daniël W. Crompton <crompton@oplerno.com>,<CR>     Oplerno LLC <info@oplerno.com><CR>*/<CR>
 
 
 " Visual
@@ -54,7 +54,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
@@ -90,7 +90,9 @@ au FileType rb nmap <Leader>A :call RunAllSpecs()<CR>
 
 au FileType go nmap <leader>R <Plug>(go-run)
 au FileType go nmap <leader>B <Plug>(go-build)
-au FileType go nmap <leader><Space> <Plug>(go-test)
+au FileType go nmap <leader><Space> :GoTest -short -timeout=20s<CR>
+"au FileType go nmap <leader><Space> :Dispatch go test -short -timeout=20s<CR>
+"au FileType go nmap <leader><Space> <Plug>(go-test -short)
 au FileType go nmap <leader>C <Plug>(go-coverage)
 
 au FileType go nmap <leader>T :!gotests -i -w %:r.go<CR>:vsp  %:r_test.go<CR>

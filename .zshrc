@@ -23,14 +23,14 @@ POWERLINE_HIDE_HOST_NAME="true"
 POWERLINE_NO_BLANK_LINE="true"
 POWERLINE_DETECT_SSH="true"
 
-# POWERLINE_GIT_CLEAN="✔"
-# POWERLINE_GIT_DIRTY="✘"
-# POWERLINE_GIT_ADDED="%F{green}✚%F{black}"
-# POWERLINE_GIT_MODIFIED="%F{blue}✹%F{black}"
-# POWERLINE_GIT_DELETED="%F{red}✖%F{black}"
-# POWERLINE_GIT_UNTRACKED="%F{yellow}✭%F{black}"
-# POWERLINE_GIT_RENAMED="➜"
-# POWERLINE_GIT_UNMERGED="═"
+POWERLINE_GIT_CLEAN="✔"
+POWERLINE_GIT_DIRTY="✘"
+POWERLINE_GIT_ADDED="%F{green}✚%F{black}"
+POWERLINE_GIT_MODIFIED="%F{blue}✹%F{black}"
+POWERLINE_GIT_DELETED="%F{red}✖%F{black}"
+POWERLINE_GIT_UNTRACKED="%F{yellow}✭%F{black}"
+POWERLINE_GIT_RENAMED="➜"
+POWERLINE_GIT_UNMERGED="═"
 
 
 # Uncomment the following line to use case-sensitive completion.
@@ -74,7 +74,7 @@ export HIST_EXPIRE_DUPS_FIRST=1
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails ruby tmux redis-cli git-flow git-extras tmuxinator bundler vagrant sudo zsh-syntax-highlighting)
+plugins=(git rails ruby tmux redis-cli git-flow git-extras tmuxinator bundler vagrant sudo zsh-syntax-highlighting radare2 docker)
 
 # User configuration
 
@@ -191,8 +191,13 @@ export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Go Lang
-export PATH="$PATH:/usr/local/go/bin"
-export GOROOT="/usr/local/go/"
+if [ -z "$DEVEL_GO" ] ;then
+  export PATH="$PATH:/usr/local/go/bin"
+  export GOROOT="/usr/local/go/"
+else
+  export PATH="$HOME/Development/go/bin:$PATH"
+  export GOROOT="$HOME/Development/go"
+fi
 
 # Android
 # set PATH so it includes user's private bin if it exists
