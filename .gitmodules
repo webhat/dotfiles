@@ -136,7 +136,7 @@
   ignore = dirty
 [submodule "bundle/vim-i18n"]
 	path = bundle/vim-i18n
-	url = git@github.com:stefanoverna/vim-i18n.git
+	url = https://github.com/stefanoverna/vim-i18n.git
   ignore = dirty
 [submodule "bundle/vim-rspec"]
 	path = bundle/vim-rspec
@@ -144,22 +144,22 @@
   ignore = dirty
 [submodule ".vim/bundle/vim-elixir"]
 	path = .vim/bundle/vim-elixir
-	url = git@github.com:elixir-lang/vim-elixir.git
+	url = https://github.com/elixir-lang/vim-elixir.git
   ignore = dirty
 [submodule ".vim/bundle/vim-i18n"]
 	path = .vim/bundle/vim-i18n
-	url = git@github.com:stefanoverna/vim-i18n.git
+	url = https://github.com/stefanoverna/vim-i18n.git
   ignore = dirty
 [submodule ".vim/bundle/vim-rspec"]
 	path = .vim/bundle/vim-rspec
-	url = git@github.com:thoughtbot/vim-rspec.git
+	url = https://github.com/thoughtbot/vim-rspec.git
   ignore = dirty
 [submodule ".vim/bundle/ack.vim"]
 	path = .vim/bundle/ack.vim
-	url = git@github.com:mileszs/ack.vim.git
+	url = https://github.com/mileszs/ack.vim.git
 [submodule ".vim/bundle/promptline.vim"]
 	path = .vim/bundle/promptline.vim
-	url = git@github.com:edkolev/promptline.vim.git
+	url = https://github.com/edkolev/promptline.vim.git
 [submodule ".vim/bundle/vim-go"]
 	path = .vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
