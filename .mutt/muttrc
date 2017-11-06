@@ -2,11 +2,45 @@ set realname ="Daniël W. Crompton"
 set from =daniel.crompton@gmail.com
 set use_from = yes
 set envelope_from ="yes"
-set folder=~/Downloads/
+set folder="$HOME/Mail"
+set record="+sent"
+set edit_headers=yes
+set read_inc=10
+set write_inc=10
+set noprompt_after
+set attribution="%f wrote:"
+my_hdr X-Loop: redhat@rphh.org # hier tragen sie ihre absendeaddresse ein
+my_hdr X-Meow: Your pets will be disemboweled if you do not keep up payments.
+set status_format="%r %v [%?M?%M/?%m] %?n?%n new, ?%?p?%p postponed, ?%?t?%t +tagged, ?%?d?%d deleted, ?(%h:%f) %?b?%b more to go.?%> %r"
+set quote_regexp="^([A-Za-z ]+>|[]>:|}-][]>:|}-]*)"
+set include
+set hdr_format="%4C %Z %{%b %d} %-15.15n (%4l) %s"
+set nomove
+set tilde
+macro index \cb |urlview\n
+macro pager \cb |urlview\n
+set noautoedit
+set pager_context=1
+set pager_stop
+set postponed="+postponed"
 set mailcap_path=~/.mailcap
 unset mark_old
 set copy
+set nomark_old
+set pipe_decode
+set postponed="+postponed"
+#             123456
+set to_chars="b .c>+"
+# 1. not addressed to me
+# 2. the recipient is me
+# 3. recipient not only me (To:)
+# 4. copy for me (Cc)
+# 5. I made this
+# 6. mailing list
 set fast_reply
+alternates "^@rphh.org$|^info@specialbrands.net$|^webhat@offcourse.io$"
+set reverse_name
+set reverse_realname
 
 set pager_index_lines=10
 
@@ -14,6 +48,7 @@ auto_view text/html                                      # view html automatical
 alternative_order text/plain text/enriched text/html     # save html for last
 
 set sort = reverse-threads
+set sort_aux = last-date-received
 
 # GPG Settings
 source ~/.mutt/gpg.rc
@@ -36,4 +71,86 @@ source $alias_file
 
 # Override Internals
 
+bind index q    "sync-mailbox"         # save changes to mailbox
+bind index x    "sync-mailbox"         # save changes to mailbox
 
+color normal      white  default  # pager body
+
+   color attachment  green  black  # ..
+
+	 # diff's
+	 color body        magenta  default   "^[-]{1,3} *.*"
+	 color body        cyan     default   "^[+]{1,3} *.*"
+   color body        cyan    black   "ftp://[^ ]*"
+   color body brightgreen black   "[[:alnum:]][-+.#_[:alnum:]]*@[-+.[:alnum:]]*[[:alnum:]]"
+   color header brightgreen black   "[[:alnum:]][-+.#_[:alnum:]]*@[-+.[:alnum:]]*[[:alnum:]]"
+   color body        cyan    default "<URL:[^ ]*>"
+   color error       red     default  # global
+   color header      blue     default	"^cc: "
+   color header      yellow   default	"^date: "
+   color header      blue			white  "^from "
+   color header      white		black  "^from: "
+   color header      blue			white  "^message-id:"
+   color header      blue			white  "^message-id: .*pine"
+   color header      blue			white  "^newsgroups: "
+   color header      blue			white  "^organi[sz]ation: "
+   color header      white		default  "^reply-to: "
+   color header      yellow		default  "^subject: "  # white on blue!
+   color header      yellow		white  "^to: "
+   color header      blue			white  "^to: guckes-usenet"
+   color header      blue			white  "^user-agent: "
+   color header      red			white  "^user-agent: .*mutt"
+   color header      blue			white  "^user-agent: .*pine"
+   color header      blue			white  "^user-agent: .*tin"
+   color header      blue			white  "^x-mailer: "
+   color header      red			white  "^x-mailer: mutt*"
+   color header      blue			white  "^x-mailer: mozilla"
+   color header      blue			white  "^x-newsreader: "
+   color header      blue			white  "^x-newsreader: .*trn"
+   color header      blue			white  "^x-also-posted-to: "
+   color header      blue			white  "^x-webtv-signature: "
+   color header      blue			white  "^delivered-to: "
+   color header      blue			white  "^x-originating-ip: "
+
+
+   color indicator   white  blue   # index
+   color markers     red    default# index
+   color message     white  blue   # index
+
+   color quoted      white   black# pager body
+   color quoted1     white   black# pager body
+   color quoted2     white   black# pager body
+   color quoted3     white   black# pager body
+   color signature   red    default# pager body
+   color status      white  blue   # index status bar default: black white
+   color tilde       blue   default# pager body
+   color tree        red    default# index
+
+   color bold        green  default # ..
+   color underline   yellow default #
+
+   color body        blue   red     "<[Gg]>"
+   color body        blue   red     "<[Bb][Gg]>"
+   color body        yellow black   "[;:]-[)/(|]"
+   color body cyan  default "(https|http|ftp|news|telnet|finger)://[^ ]*"
+   ignore *
+   unignore from: date subject to cc #reply-to:
+   unignore organization organisation
+   unignore user-agent x-agent x-mailer x-newsreader x-mailing-list #x-mimeole
+   unignore message-id newsgroups posted-to x-also-posted-to
+   unignore list-unsubscribe
+#   unignore x-lotus
+#   unignore x-resent
+#   unignore x-webtv
+   unignore x-originating-ip
+
+lists soot-list pth-users linux-security-module bofh focus-linux secprog focus-virus securityfocus honeypots vuln-dev secnews bugtraq linux-kernel security
+subscribe soot-list pth-users linux-security-module bofh focus-linux secprog focus-virus securityfocus honeypots vuln-dev secnews bugtraq linux-kernel security
+
+set ignore_list_reply_to=yes
+set metoo=no
+set mime_forward=ask-yes
+
+set sig_dashes=no
+
+macro generic 0 "!fetchmail -aF||fetchmail\n"

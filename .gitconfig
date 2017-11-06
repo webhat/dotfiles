@@ -1,7 +1,7 @@
 [user]
 	name = Daniël W. Crompton
 	email = daniel.crompton@gmail.com
-	signingkey = 9A20619E
+	signingkey = 91F7E1CC
 [core]
 	excludesfile = ~/.gitignore_global
 [alias]

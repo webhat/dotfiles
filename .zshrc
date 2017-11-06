@@ -210,4 +210,5 @@ export USE_CCACHE=1
 function dvorak_firsttime() {
   echo Run: sudo dpkg-reconfigure keyboard-configuration
 }
-# Other?
+# Other aliases
+alias bc='bc -wlq'
