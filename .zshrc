@@ -118,6 +118,13 @@ fi
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 # alias ssh=/opt/local/bin/ssh
 
+# gnupg
+# XXX: GPG_TTY defined in .zshenv
+#export GPG_TTY=/dev/tty #$(tty)
+if [[ -n "$SSH_CONNECTION" || -n "$TMUX" ]] ;then
+  export PINENTRY_USER_DATA="USE_CURSES=1"
+fi
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
