@@ -152,5 +152,5 @@ command! -nargs=0 Uncov call s:ClearCoverageSigns()
 augroup SimpleCov
   au!
   au BufWinEnter *.rb call s:MarkUpBuffer(expand('<afile>:p'))
-  au BufWinEnter *.go call s:MarkUpBuffer(expand('<afile>:p'))
+  "au BufWinEnter *.go call s:MarkUpBuffer(expand('<afile>:p'))
 augroup end

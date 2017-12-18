@@ -144,3 +144,26 @@ fonts
 .mutt/muttrc
 .fetchids
 .mutt/aliases
+
+
+# File extentions
+*.GIF
+*.gif
+*.JPG
+*.jpg
+*.PNG
+*.png
+*.pdf
+*.PDF
+*.xls*
+*.*doc*
+*.csv
+*.asc
+.Xdefaults
+.arduino*
+Arduino
+.mozilla
+.xsession*
+.oracle*
+.gconf
+.local
