@@ -116,10 +116,7 @@ fi
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-# Use MacPorts SSH not OSX's default
-if [ -f /opt/local/bin/ssh ] ; then
-  alias ssh=/opt/local/bin/ssh
-fi
+alias ssh=/opt/local/bin/ssh
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
