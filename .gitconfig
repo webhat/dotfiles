@@ -1,8 +1,8 @@
 [user]
 	name = Daniël W. Crompton
 	email = daniel.crompton@gmail.com
-	signingkey = 695AF468
-  #signingkey = 91F7E1CC
+  #signingkey = 695AF468
+  signingkey = 91F7E1CC
 [core]
 	excludesfile = ~/.gitignore_global
 [alias]
@@ -10,6 +10,10 @@
   sig = log --graph --pretty=format:'%H %aN %s %G?' --show-signature 
 	unstage = reset HEAD --
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\nSigned-By: <%GS> %G?' --abbrev-commit --name-status --decorate --date-order
+  ri = rebase -i --autosquash
+  mri = rebase -i
+  fix = commit --fixup
+  squ = commit --squash
 [push]
 	default = tracking
 [help]
