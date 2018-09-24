@@ -167,3 +167,6 @@ Arduino
 .oracle*
 .gconf
 .local
+Project
+go
+*.vmdk

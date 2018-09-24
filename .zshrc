@@ -74,7 +74,7 @@ export HIST_EXPIRE_DUPS_FIRST=1
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails ruby tmux redis-cli git-flow git-extras tmuxinator bundler vagrant sudo zsh-syntax-highlighting radare2 docker)
+plugins=(git rails ruby tmux redis-cli git-flow git-extras tmuxinator bundler vagrant sudo zsh-syntax-highlighting radare2 docker dash golang ssh-agent gpg-agent)
 
 # User configuration
 
@@ -116,7 +116,7 @@ fi
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-alias ssh=/opt/local/bin/ssh
+# alias ssh=/opt/local/bin/ssh
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -189,6 +189,10 @@ export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Go Lang
+cover () { 
+  t="/tmp/go-cover.$$.tmp"
+  go test -coverprofile=$t $@ && go tool cover -html=$t && unlink $t
+}
 if [ -z "$DEVEL_GO" ] ;then
   export PATH="$PATH:/usr/local/go/bin"
   export GOROOT="/usr/local/go/"
@@ -214,3 +218,6 @@ function dvorak_firsttime() {
 }
 # Other aliases
 alias bc='bc -wlq'
+
+# radare2
+PATH="$PATH:/usr/local/bin"
