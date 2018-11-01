@@ -17,8 +17,8 @@ set include
 set hdr_format="%4C %Z %{%b %d} %-15.15n (%4l) %s"
 set nomove
 set tilde
-macro index \cb |urlview\n
-macro pager \cb |urlview\n
+macro index \ca |urlview\n
+macro pager \ca |urlview\n
 set noautoedit
 set pager_context=1
 set pager_stop
@@ -38,7 +38,7 @@ set to_chars="b .c>+"
 # 5. I made this
 # 6. mailing list
 set fast_reply
-alternates "^@rphh.org$|^info@specialbrands.net$|^webhat@offcourse.io$"
+alternates "^@rphh.org$|^info@specialbrands.net$|^d.w.crompton@ateps.com$"
 set reverse_name
 set reverse_realname
 

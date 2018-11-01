@@ -7,6 +7,8 @@ nmap <leader>s :source $MYVIMRC<CR>
 nmap <leader>b :tabedit ~/.bash_profile<CR>:sp ~/.bashrc<CR>
 nmap <leader>z :tabedit ~/.zshrc<CR>
 
+nmap <leader>u :setlocal spell spelllang=en
+
 set shell=/bin/sh
 
 
