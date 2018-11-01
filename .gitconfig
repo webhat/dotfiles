@@ -15,7 +15,7 @@
   fix = commit --fixup
   squ = commit --squash
 [push]
-	default = tracking
+	default = upstream
 [help]
 	autocorrect = 1
 [github]
@@ -24,7 +24,8 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [pull]
-	rebase = false
+	rebase = true
+  #rebase = false
 [diff]
 	tool = vimdiff
 [difftool]

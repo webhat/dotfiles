@@ -170,3 +170,6 @@ Arduino
 Project
 go
 *.vmdk
+.vpn
+.irssi
+.bash_sessions

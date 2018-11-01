@@ -74,7 +74,7 @@ export HIST_EXPIRE_DUPS_FIRST=1
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails ruby tmux redis-cli git-flow git-extras tmuxinator bundler vagrant sudo zsh-syntax-highlighting radare2 docker dash golang ssh-agent gpg-agent)
+plugins=(git rails ruby tcpdump tmux redis-cli git-flow git-extras tmuxinator bundler vagrant sudo zsh-syntax-highlighting radare2 docker dash golang ssh-agent gpg-agent)
 
 # User configuration
 
