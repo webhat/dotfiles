@@ -7,7 +7,7 @@ alias tma='tmux attach -d -t'
 #alias tmux-new='tmux new -s $(basename $(pwd))'
 alias tmux-new='tmux new-session -d -s $(basename $(pwd)) \; split-window -h \; split-window -v \; select-pane -t 0 \; attach'
 alias tmux-dev='tmux new-session -d -s $(basename $(pwd)) \; split-window -h \;  splitw -v -p 50 -t 1 ". bin/exports ; bundle exec guard" \; splitw -v -p 50 -t 2 "irc webhat -c \#bofh\ p03k03,\#oplerno\ p03k03" \; select-pane -t 0 \; attach'
-export PATH="~/bin/:$PATH"
+export PATH="~/bin/:$PATH:/usr/games"
 
 
 # Powerline

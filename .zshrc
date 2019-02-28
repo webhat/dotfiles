@@ -78,7 +78,7 @@ plugins=(git rails ruby tcpdump tmux redis-cli git-flow git-extras tmuxinator bu
 
 # User configuration
 
-export PATH="/opt/local/bin/:/opt/local/lib/mysql56/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/opt/local/bin/:/opt/local/lib/mysql56/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -89,12 +89,14 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
+export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
 
+# igt commands
 ignore() { echo $1 >> .gitignore }
+gitkeep() { (test -d $1 || mkdir $1) && touch $1/.keep }
 
 # Modified from original: http://chneukirchen.org/blog/archive/2012/02/10-new-zsh-tricks-you-may-not-know.html
 _OPTLOCALBINVIM=/opt/local/bin/vim
@@ -103,11 +105,11 @@ if [[ -a $_OPTLOCALBINVIM ]]; then
   alias vi=$_OPTLOCALBINVIM
 
   foreground-vi() {
-    fg %$_OPTLOCALBINVIM
-  }
+  fg %$_OPTLOCALBINVIM
+}
 
-  zle -N foreground-vi
-  bindkey '^Z' foreground-vi
+zle -N foreground-vi
+bindkey '^Z' foreground-vi
 fi
 
 
@@ -116,7 +118,6 @@ fi
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-# alias ssh=/opt/local/bin/ssh
 
 # gnupg
 # XXX: GPG_TTY defined in .zshenv
@@ -124,6 +125,12 @@ fi
 if [[ -n "$SSH_CONNECTION" || -n "$TMUX" ]] ;then
   export PINENTRY_USER_DATA="USE_CURSES=1"
 fi
+
+# Use MacPorts SSH not OSX's default
+if [ -f /opt/local/bin/ssh ] ; then
+  alias ssh=/opt/local/bin/ssh
+fi
+
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -228,3 +235,6 @@ alias bc='bc -wlq'
 
 # radare2
 PATH="$PATH:/usr/local/bin"
+
+# Final Exports
+export PATH
