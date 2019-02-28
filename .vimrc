@@ -97,7 +97,7 @@ au FileType go nmap <leader><Space> :GoTest -short -timeout=20s<CR>
 "au FileType go nmap <leader><Space> <Plug>(go-test -short)
 au FileType go nmap <leader>C <Plug>(go-coverage)
 
-au FileType go nmap <leader>T :!gotests -i -w %:r.go<CR>:vsp  %:r_test.go<CR>
+au FileType go nmap <leader>T :!gotests -exported -i -w %:r.go<CR>:vsp  %:r_test.go<CR>
 au FileType rl nmap <leader>T :!ragel -Z -G2 -o %:r.go %:r.rl<CR>
 au BufReadPost *.rl set syntax=go
 
