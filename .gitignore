@@ -14,6 +14,7 @@ Public
 .Trash
 
 # Ignored dotfiles
+.*sw[po]
 .zsh_history
 .zcomp*
 .bash_history
@@ -155,9 +156,15 @@ fonts
 *.png
 *.pdf
 *.PDF
+*.mov
+*.MOV
+*.MP4
+*.mp4
 *.xls*
 *.*doc*
 *.csv
+*.pptx
+*.pub
 *.asc
 .Xdefaults
 .arduino*
@@ -173,3 +180,13 @@ go
 .vpn
 .irssi
 .bash_sessions
+*.key
+*.jpeg
+*.txt
+*.mobi
+*.epub
+*.gz
+*.xz
+*.tgz
+*.tbz2
+*.tar*
