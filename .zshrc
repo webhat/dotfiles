@@ -118,6 +118,7 @@ fi
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+alias sshpasswd="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
 
 # gnupg
 # XXX: GPG_TTY defined in .zshenv
