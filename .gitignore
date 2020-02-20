@@ -190,3 +190,4 @@ go
 *.tgz
 *.tbz2
 *.tar*
+.cisco*

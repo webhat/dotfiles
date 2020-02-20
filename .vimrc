@@ -47,7 +47,8 @@ call pathogen#infect()
 call pathogen#helptags()
 
 let g:airline#extensions#tabline#enabled = 1
-let g:syntastic_go_checkers = ['gometalinter', "go", "golint", "gotype", "govet"]
+let g:syntastic_go_checkers = ['golangci-lint', "go", "golint", "govet" ]
+" , "gotype"]
 let g:syntastic_javascript_checkers = ['eslint']
 
 " set statusline+=%#warningmsg#
@@ -169,11 +170,13 @@ function! RestoreRegister()
   let @" = s:restore_reg
   return ''
 endfunction
+
 function! s:Repl()
   let s:restore_reg = @"
   return "p@=RestoreRegister()\<cr>"
 endfunction
 vmap <silent> <expr> p <sid>Repl()
 
+set shell=/bin/sh
 
 " vim: set ts=2 sw=2 tw=78 et :

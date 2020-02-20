@@ -78,7 +78,7 @@ plugins=(git rails ruby tcpdump tmux redis-cli git-flow git-extras tmuxinator bu
 
 # User configuration
 
-export PATH="/opt/local/bin/:/opt/local/lib/mysql56/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/games:/opt/local/bin/:/opt/local/lib/mysql56/bin/:/usr/local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -194,6 +194,11 @@ unalias gca
 alias gca='git commit -v -a -S'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
+if [ -n "$(which xclip)" ] ; then
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+fi
+
 # Found: http://chneukirchen.org/blog/archive/2012/02/10-new-zsh-tricks-you-may-not-know.html
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
@@ -208,9 +213,16 @@ cover () {
   t="/tmp/go-cover.$$.tmp"
   go test -coverprofile=$t $@ && go tool cover -html=$t && unlink $t
 }
+export DEVEL_GO=true
 if [ -z "$DEVEL_GO" ] ;then
-  export PATH="$PATH:/usr/local/go/bin"
-  export GOROOT="/usr/local/go/"
+  if [ -d "/usr/local/go/bin" ] ; then
+    export PATH="$PATH:/usr/local/go/bin"
+    export GOROOT="/usr/local/go/"
+  fi
+  if [ -d "/usr/lib/go/bin" ] ; then
+    export PATH="$PATH:/usr/lib/go/bin"
+    export GOROOT="/usr/lib/go/"
+  fi
 else
   export PATH="$HOME/Development/go/bin:$PATH"
   export GOROOT="$HOME/Development/go"
@@ -220,6 +232,11 @@ fi
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/go/bin" ] ; then
+  PATH="$HOME/go/bin:$PATH"
 fi
 
 # CyanogenMod
